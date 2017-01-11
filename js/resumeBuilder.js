@@ -1,49 +1,46 @@
-
-// $("#main").append("Stephanie Spears");
-
-// var name = "Stephanie Spears";
-// var role = "Web Developer";
-// var email = "Stephanie.Spears11@gmail.com";
-// var myaddy = "PDX my addy";
-// var mobile = "503-459-xxxx";
-// var mygithub = "https://github.com/Stephanie-Spears";
-// var skills = ["PHP", ".NET", "Drupal", "HTML/CSS/JavaScript", "C++", "Excellent written and verbal communication", "Highly organized and detail-oriented", "Learn and adapt quickly", "Good sense of humor and positive attitude", "Strong work ethic", "Analytical thinking and research ability", "Work effectively as part of a team or independently"];
-// var me = "img/me.jpg";
-// var welcome = "Hi there!";
-
 var bio = {
   "name": "Stephanie Spears",
   "role": "Web Developer",
   "contacts": {
-    "mobile": "503-233-XXXX",
-    "email": "Stephanie.Spears11@gmail.com",
+    "mobile": "503-xxx-4077",
+    "email": "Stephanie.Spears22@gmail.com",
     "github": "https://github.com/Stephanie-Spears",
-    "twitter": "@none",
-    // "location": "Portland Oregon"
+    "location": "Portland, Oregon"
   },
-  "welcomeMessage": "OH HAIIII!",
+  "welcomeMsg": "lorem ipsum dolor sit amet etc etc etc.",
   "skills": [
-    "PHP", ".NET", "Drupal", "HTML/CSS/JavaScript", "C++", "Excellent written and verbal communication", "Highly organized and detail-oriented", "Learn and adapt quickly", "Good sense of humor and positive attitude", "Strong work ethic", "Analytical thinking and research ability", "Work effectively as part of a team or independently"],
-    "biopic": "img/me.jpg"
+    "PHP", ".NET", "Drupal", "HTML/CSS/JavaScript", "C++", "Excellent written and verbal communication", "Highly organized and detail-oriented", "Learn and adapt quickly", "Good sense of humuor and positive attitude", "Strong work ethic", "Analytical thinking and research ability", "Work effectively as part of a team or independently"
+  ],
+  "bioPic": "img/bioPic.jpg"
 };
-//combine elements in an array into a single string using array.join([chars]), separated by an optional chars
-var formattedName=HTMLheaderName.replace("%data%", name);
-var formattedRole=HTMLheaderRole.replace("%data%", role);
-var formattedContact=HTMLcontactGeneric.replace("%data%", contacts);
-var formattedPicture=HTMLbioPic.replace("%data%", me);
-var formattedSkills=HTMLskills.replace("%data%", skills);
-var formattedWelcome=HTMLwelcomeMsg.replace("%data%", welcomeMessage);
 
-// $("#header").prepend(formattedName, formattedRole);
-// $("#header").prepend(formattedWelcome, formattedContact);
-// $("#header").prepend(formattedPicture, formattedSkills);
-// $("#header").prepend(formattedName, formattedRole);
-$("#main").append(formattedWelcome, formattedContact);
+var formattedName=HTMLheaderName.replace("%data%", bio.name);
+var formattedRole=HTMLheaderRole.replace("%data%", bio.role);
+
+var formattedMobile=HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
+var formattedGithub=HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
+
+var formattedBioPic=HTMLbioPic.replace("%data%", bio.bioPic);
+var formattedWelcomeMsg=HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 
 
 
+// var formattedPicture=HTMLbioPic.replace("%data%", bioPic);
+// var formattedSkills=HTMLskills.replace("%data%", skills);
+// var formattedWelcome=HTMLwelcomeMsg.replace("%data%", welcomeMsg);
 
-// $("#main").append();
+$("#header").prepend(formattedName, formattedRole);
+$("#topContacts").prepend(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
+$("#").append(formattedBioPic, formattedWelcomeMsg);
+
+// $("#header").append(formattedContact);
+
+
+// $("#main").append("Stephanie Spears");
+
+// $("#main").prepend(formattedName, formattedRole);
 
 
 
@@ -65,3 +62,6 @@ $("#main").append(formattedWelcome, formattedContact);
 // console.log(funThoughts);
 //
 // $("#main").append(funThoughts);
+
+
+//combine elements in an array into a single string using array.join([chars]), separated by an optional chars
