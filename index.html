@@ -6,13 +6,14 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 <head>
   <meta charset="utf-8">
   <title>Resume</title>
+  <script src="js/jQuery.js"></script>
+  <script src="js/helper.js"></script>
   <link href="css/style.css" rel="stylesheet">
   <!-- <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
   <div id="main">
-
     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
     </div>
@@ -38,16 +39,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <h2 class="orange center-text">Let's Connect</h2>
       <ul id="footerContacts" class="flex-box"></ul>
     </div>
-
   </div>
-
-  <script src="js/jQuery.js"></script>
-  <script src="js/helper.js"></script>
-  <!--The next line tells the browser where to download the JavaScript file you'll be writing. In resumeBuilder.js, you'll be writing code that builds the resume dynamically when this website, index.html, is opened.-->
   <script src="js/resumeBuilder.js"></script>
-  <!--The next few lines are checking to see if you have not changed each section of the resume. If you have not made any changes to a section of the resume, then that part of the resume does not show up. More on this in the course.-->
   <script>
-    //You can write JavaScript between <script> tags.
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }

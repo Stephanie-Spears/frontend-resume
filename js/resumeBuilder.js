@@ -14,25 +14,22 @@ var bio = {
   "myBioPic": "img/bioPic.jpg"
 };
 
-
 var work = {
-  "workStart": "XXXXX",
   "workEmployer": "Kuzuha Language College",
   "workTitle": "English Language Consultant",
   "workDates": "2012-2015",
   "workLocation": "Osaka",
-  "workDescription": "English Language Consultant on a variety of technical and academnic materials. Editing, proof-reading, translation."
+  "workDescription": "English Language Consultant on a variety of technical and academnic materials. Editing, proof-reading, translation.",
+  "workLink": "http://www.klc-inc.com/"
 };
 
 var school = {
-  "schoolStart": "XXXX",
   "schoolName": "Epicodus",
   "schoolDegree": "graduate",
   "schoolLocation": "Portland, Oregon",
   "schoolMajor": "PHP/Drupal/JavaScript"
 };
 
-// var school2 = new school();
 
 var formattedName=HTMLheaderName.replace("%data%", bio.name);
 var formattedRole=HTMLheaderRole.replace("%data%", bio.role);
@@ -42,16 +39,19 @@ var formattedMobile=HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGithub=HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").prepend(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
+$("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 
 var formattedBioPic=HTMLbioPic.replace("%data%", bio.myBioPic);
 var formattedWelcomeMsg=HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 $("#header").append(formattedWelcomeMsg, formattedBioPic);
 
 
-var formattedWork=HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#header").append(formattedWelcomeMsg, formattedBioPic);
-
+var formattedWorkEmployer=HTMLworkEmployer.replace("%data%", work.workEmployer);
+var formattedSchoolName=HTMLschoolName.replace("%data%", school.schoolName);
+// var formattedWork=HTMLworkEmployer.replace("#", work.workLink);
+// var formattedWorkStart=HTMLworkStart.insert(formattedWork);
+$("#main").append(formattedWorkEmployer);
+$("#education").append(formattedSchoolName);
 
 
 
