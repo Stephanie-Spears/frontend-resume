@@ -4,6 +4,15 @@
 var name = "Stephanie Spears";
 var role = "Web Developer";
 var skills = ["PHP", ".NET", "Drupal", "HTML/CSS/JavaScript", "C++", "Excellent written and verbal communication", "Highly organized and detail-oriented", "Learn and adapt quickly", "Good sense of humor and positive attitude", "Strong work ethic", "Analytical thinking and research ability", "Work effectively as part of a team or independently"];
+var email = "Stephanie.Spears11@gmail.com";
+var phone = "503-459-xxxx"
+var me = "img/me.jpg"
+var contact = email + phone;
+var welcome = "Hi there!"
+var bio = {
+  "name" : name, "role" : role, "contact" : contact, "me": me, "skills" : skills, "welcome" : welcome,
+};
+
 
 var formattedName=HTMLheaderName.replace("%data%", name);
 
@@ -11,9 +20,10 @@ var formattedRole=HTMLheaderRole.replace("%data%", role);
 
 $("#header").prepend(formattedName, formattedRole);
 
-$("#main").append(skills[0]);
+// $("#main").append(skills);
 
 
+$("#main").append(bio.contact);
 
 
 
