@@ -17,19 +17,18 @@ var bio = {
 var work = {
   "workEmployer": "Kuzuha Language College",
   "workTitle": "English Language Consultant",
-  "workDates": "2012-2015",
+  "workDates": "Feb 2012-Dec 2015",
   "workLocation": "Osaka",
   "workDescription": "English Language Consultant on a variety of technical and academnic materials. Editing, proof-reading, translation.",
-  "workLink": "http://www.klc-inc.com/"
 };
 
 var school = {
   "schoolName": "Epicodus",
+  "schoolDate": "Jan 2017-July 2017",
   "schoolDegree": "graduate",
   "schoolLocation": "Portland, Oregon",
   "schoolMajor": "PHP/Drupal/JavaScript"
 };
-
 
 var formattedName=HTMLheaderName.replace("%data%", bio.name);
 var formattedRole=HTMLheaderRole.replace("%data%", bio.role);
@@ -39,21 +38,45 @@ var formattedMobile=HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail=HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGithub=HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLocation=HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
+$("#topContacts").prepend(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
 
 var formattedBioPic=HTMLbioPic.replace("%data%", bio.myBioPic);
 var formattedWelcomeMsg=HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#header").append(formattedWelcomeMsg, formattedBioPic);
+$("#header").append(formattedBioPic, formattedWelcomeMsg);
+$("#header").append(HTMLskillsStart);
 
+// var formattedSkills=HTMLskills.replace("%data%", bio.skills);
+bio.skills.forEach(HTMLskills.replace("%data%", bio.skills));
+$("#header").append(formattedSkills);
+// skills.forEach(formattedSkills);
+// $("#header").append(formattedSkills);
 
+var formattedWorkTitle=HTMLworkTitle.replace("%data%", work.workTitle);
 var formattedWorkEmployer=HTMLworkEmployer.replace("%data%", work.workEmployer);
+var formattedWorkDates=HTMLworkDates.replace("%data%", work.workDates);
+var formattedWorkLocations=HTMLworkLocation.replace("%data%", work.workLocation);
+var formattedWorkDescription=HTMLworkDescription.replace("%data%", work.workDescription);
+
 var formattedSchoolName=HTMLschoolName.replace("%data%", school.schoolName);
-// var formattedWork=HTMLworkEmployer.replace("#", work.workLink);
-// var formattedWorkStart=HTMLworkStart.insert(formattedWork);
-$("#main").append(formattedWorkEmployer);
+var formattedSchoolDate=HTMLschoolDates.replace("%data%", school.schoolDate);
+var formattedSchoolDegree=HTMLschoolDegree.replace("%data%", school.schoolDegree);
+var formattedSchoolLocation=HTMLschoolLocation.replace("%data%", school.schoolLocation);
+var formattedSchoolMajor=HTMLschoolMajor.replace("%data%", school.schoolMajor);
+
+$("#main").prepend(HTMLworkStart);
+$("#workExperience").append(formattedWorkEmployer + formattedWorkTitle);
+$("#workExperience").append(formattedWorkDates);
+$("#workExperience").append(formattedWorkLocations);
+$("#workExperience").append(formattedWorkDescription);
+
+// $("#workExperience").append(formattedWorkTitle);
+
+$("#main").prepend(HTMLschoolStart);
 $("#education").append(formattedSchoolName);
-
-
+$("#education").append(formattedSchoolDate);
+$("#education").append(formattedSchoolDegree);
+$("#education").append(formattedSchoolLocation);
+$("#education").append(formattedSchoolMajor);
 
 // var formattedSkills=HTMLskills.replace("%data%", bio.skills);
 // $("#topContacts").append(formattedSkills, HTMLskillsStart);
